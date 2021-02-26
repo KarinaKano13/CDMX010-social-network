@@ -32,17 +32,23 @@ export const getData = db.collection('newPost')// .orderBy('fecha')
   .onSnapshot((query) => {
     query.forEach((message) => {
       const dataBase = message.data();
-      const html2 = ' ';
-
-       console.log(dataBase);
-
-      // renderPost(dataBase);
-      // return dataBase;
-
-      // renderPost(dataBase);
+      console.log(dataBase);
     });
   });
 
+/*
+const docRef = db.collection('newPost').doc();
+docRef.get().then((doc) => {
+  if (doc.exists) {
+    console.log("Document data:", doc.data());
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+  }
+}).catch((error) => {
+  console.log("Error getting document:", error);
+});
+*/
 /*
 const prueba = (title) => { db.collection('newPost').doc(title).get();
 console.log(title);

@@ -8,6 +8,8 @@ window.onpopstate = () => {
 };
 
 window.onNavigate = onNavigate;
+
+
 /*
 window.addEventListener("DOMContentLoaded", (post) => {
 home()

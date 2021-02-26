@@ -1,4 +1,4 @@
-import { savePost, db, getData } from './firebase.js';
+import { savePost, db } from './firebase.js';
 
 const createPost = `
 <div>
