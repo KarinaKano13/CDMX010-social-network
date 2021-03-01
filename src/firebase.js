@@ -1,7 +1,5 @@
 // Your web app's Firebase configuration
 
-import { renderPost } from './home.js';
-
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: 'AIzaSyCE3V_6hn_oiPhJAvfRLJLygBVct9fIZRg',
@@ -35,24 +33,3 @@ export const getData = db.collection('newPost')// .orderBy('fecha')
       console.log(dataBase);
     });
   });
-
-/*
-const docRef = db.collection('newPost').doc();
-docRef.get().then((doc) => {
-  if (doc.exists) {
-    console.log("Document data:", doc.data());
-  } else {
-    // doc.data() will be undefined in this case
-    console.log("No such document!");
-  }
-}).catch((error) => {
-  console.log("Error getting document:", error);
-});
-*/
-/*
-const prueba = (title) => { db.collection('newPost').doc(title).get();
-console.log(title);
-};
-
-prueba()
-*/

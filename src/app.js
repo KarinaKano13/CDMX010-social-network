@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-cycle
 import { onNavigate, routes, rootDiv } from './routes.js';
-import { home, renderPost } from './home.js';
+import { home, renderPost } from './homePages.js';
 import { getData } from './firebase.js';
 
 window.onpopstate = () => {
