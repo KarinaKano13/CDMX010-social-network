@@ -8,24 +8,3 @@ window.onpopstate = () => {
 };
 
 window.onNavigate = onNavigate;
-
-
-/*
-window.addEventListener("DOMContentLoaded", (post) => {
-home()
-});
-*/
-// ESTA FU8NCIÓN SOLAMENTE CARGA LOS VALORES DE MI TEMPLATE QUE ESTA EN HOME
-
-// export const baseDatos = db.collection("newPost2").onSnapshot(query => {
-//  query.forEach(message => {
-//    let dataBase = message.data();
-//    console.log(dataBase);
-//  });
-// });
-
-/*
-const basedatos = db.collection('newPost2').onSnapshot(query => {
-  query.forEach(message => html += createCard(message))
-  });
-*/

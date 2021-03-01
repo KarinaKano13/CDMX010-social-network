@@ -1,30 +1,30 @@
-import { savePost, db } from './firebase.js';
+import { savePost } from './firebase.js';
 
 const createPost = `
-<div>
-    <input type="text" placeholder="Título de la publicación" id="title"></input>
-    <input type="text" placeholder="Subtítulo" id="subtitle"></input>
-    <textarea type="text" placeholder="Cuerpo de la publicación" id="body"></textarea>
-    <button id="saveButton">Publicar</button>
-</div>
-
-<div id="commentary">
-</div>
-`;
+  <div>
+      <div id="newPost">
+          <h6>Comparte tus hallazgos:</h6>
+            <input type="text" placeholder="Título de la publicación" id="title"></input>
+            <textarea placeholder="Subtítulo" id="subtitle"></textarea>
+            <textarea placeholder="Cuerpo de la publicación" id="body"></textarea>
+            <button id="saveButton">Publicar</button>
+      </div>
+  </div>
+  <div id="post"></div>
+  `;
 
 export const renderPost = (param) => `
-<div>
-
-<h2 id="rendertitle">${param.title}</h2><br>
-<h3 id"renderSubtitle">${param.subtitle}</h3><br>
-<p id="renderBody">${param.body}</p>
-</div>
-<div>
-<button id="like">LIKE</button>
-<button id="edit">Edit</button>
-<button id="delete">DELETE</button>
-</div>
-`;
+  <div id="cardContainer">
+    <h2 id="rendertitle">${param.title}</h2><br>
+    <h3 id"cardSubtitle">${param.subtitle}</h3><br>
+    <p id="renderBody">${param.body}</p>
+  </div>
+  <div>
+    <button id="like">LIKE</button>
+    <button id="edit">Edit</button>
+    <button id="delete">DELETE</button>
+  </div>
+  `;
 
 export const home = (container) => {
   const html = `
@@ -47,7 +47,7 @@ export const home = (container) => {
   const titleCard = document.getElementById('title');
   const subtitleCard = document.getElementById('subtitle');
   const bodyCard = document.getElementById('body');
-  const space = document.getElementById('commentary');
+  const space = document.getElementById('post');
 
   postbutton.addEventListener('click', (e) => {
     e.preventDefault();
@@ -102,5 +102,5 @@ const like = () => {
   const likebutton = document.getElementById('like');
   likebutton.addEventListener('click', () => {
     console.log('Yo voy a dar Like');
-});
+  });
 };
