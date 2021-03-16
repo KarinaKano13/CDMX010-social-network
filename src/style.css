@@ -105,6 +105,7 @@ display: flex;
 flex-wrap: wrap;
 }
 
+/* ESTE ES EL CÓDIGO ANTERIOR DE LA CARD DE POST
 #cardContainer{
   height: 160px;
   width: 281px;
@@ -116,6 +117,48 @@ flex-wrap: wrap;
   display: flex; 
   flex-wrap: wrap;
   
+}
+*/
+/*Propuesta de Karina */
+#cardContainer{
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  display: flex;
+  flex: wrap;
+  flex-direction: column;
+  height: 180px;
+  width: 281px;
+  margin-left: 38px;
+  margin-top: 40px;
+}
+
+.textPost{
+  
+}
+
+#iconHeart{
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+#likesF{
+  margin-top: -26px;
+  margin-left: 48px;
+}
+
+
+.icons{
+  margin-top: -35px;
+  margin-left: 185px;
+}
+
+.icon{
+  
+  width: 22px;
+  height: 22px;
+  margin-left: 18px;
+
 }
 
 #cardTitle {
@@ -309,3 +352,7 @@ form {
     margin-top: 50%;
   }
   
+  .imageLinks {
+    display: flex;
+    flex-direction: row;
+  }

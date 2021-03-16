@@ -86,7 +86,7 @@ export const signUpWithGoogle = () => {
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = credential.accessToken;
         // ...
-        onNavigate('/home');
+        document.location.href = './home.js';
       }
       // The signed-in user info.
       var user = result.user;
@@ -102,3 +102,4 @@ export const signUpWithGoogle = () => {
       // ...
     });
 };
+

@@ -1,24 +1,42 @@
-// eslint-disable-next-line import/no-cycle
-
 import { nav } from './components/nav.js';
-
+/*
 export const renderPost = (param) => `
 <div>
   <div id="cardContainer" class= "link">
     <h2 id="cardTitle" class="link" data-action = "post">${param.Title}</h2>
-    <!--<img id="authorAvatar" class="icons" src="resources/user.png" alt="authorAvatar">-->
     <h3 id="cardSubtitle">${param.Subtitle}</h3>
     <p id="renderBody">${param.Body}</p>
-    <!--<img id="readingTime" class="icons" src="resources/clock.png" alt="readingTime">-->
-    </div>
+      <img class="icon" src="resources/dashicons-trash.png" alt="delate icon">
+      <img class="icon" src="resources/dashicons-trash.png" alt="delate icon">
+      <img class="icon" src="resources/dashicons-trash.png" alt="delate icon">
+  </div>
 </div>
 `;
+*/
+export const renderPost = (param, id) => `
+<div id="cardContainer">
+    <div class="textPost">
+      <h2 id="cardTitle" data-action = "post"  >${param.Title}</h2>
+      <h3 id="cardSubtitle">${param.Subtitle}</h3>
+      <p id="renderBody">${param.Body}</p>
+      
+    </div>
+    <div id="iconHeart">
+      <img class="icon" src="resources/dashicons-heart.png" alt="delate icon" data-action="like" data-id ="${id}">
+      <p id="likesF">1</p>
+    </div>
+    <div class="icons">
+      <img class="icon" src="resources/dashicons-trash.png" alt="delate icon" data-action="delete" data-id ="${id}">
+      <img class="icon" src="resources/dashicons-edit-page.png" alt="delate icon" data-action="edit" data-id ="${id}">
+    </div>
+  </div>
+  `;
 
-export const home = (container, firebase, userName) => {
+export const home = (container, firebase) => {
   const html = `
   <div id="app">
     ${nav}
-      <h1>¡Hola ${userName}!</h1>
+      <h1>¡Hola Elena!</h1>
       
     <div>
       <div id="newPost">
