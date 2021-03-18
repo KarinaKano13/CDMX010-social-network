@@ -75,7 +75,7 @@ export const signOut = () => {
 
 export const signUpWithGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider)
+  auth.signInWithPopup(provider)
     .then((result) => {
       onNavigate('/home');
     }).catch((error) => {
