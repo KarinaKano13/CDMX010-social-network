@@ -1,4 +1,5 @@
 // import { userAuth } from './firebase.js';
+// eslint-disable-next-line import/no-cycle
 import { onNavigate } from './routes.js';
 import { auth } from './firebase.js';
 
@@ -74,32 +75,12 @@ export const signOut = () => {
 
 export const signUpWithGoogle = () => {
   const provider = new firebase.auth.GoogleAuthProvider();
-  auth.signInWithRedirect(provider);
-
-  // TRAER DATOS DE LA REDIRECCIÓN DE GOOGLE PARA ACREDITAR EL SIGN UP EN FIREBASE
-  auth.getRedirectResult()
+  firebase.auth().signInWithPopup(provider)
     .then((result) => {
-      if (result.credential) {
-        /** @type {firebase.auth.OAuthCredential} */
-        var credential = result.credential;
-
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = credential.accessToken;
-        // ...
-        document.location.href = './home.js';
-      }
-      // The signed-in user info.
-      var user = result.user;
+      onNavigate('/home');
     }).catch((error) => {
-      alert("si soy yo")
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
+      console.log(error);
+      // eslint-disable-next-line no-alert
+      alert(errorMessage, 4000);
     });
 };
-

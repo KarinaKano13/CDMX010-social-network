@@ -80,15 +80,16 @@ const addButtonEvents = () => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const click = e.target.dataset.action;
+      const id = e.target.dataset.id;
       console.log(click);
       // eslint-disable-next-line no-use-before-define
-      eventsController(click);
+      eventsController(click, id);
     });
   });
 };
 
 // Esta es la aplicación que genera el routing
-const eventsController = (e) => {
+const eventsController = (e, id) => {
   // eslint-disable-next-line default-case
   switch (e) {
     case 'novaApp':
@@ -127,9 +128,11 @@ const eventsController = (e) => {
     case 'signOut':
       signOut();
       break;
-    case 'signUpWithGoogle':
+    case 'signInWithGoogle' && 'signUpWithGoogle':
       signUpWithGoogle();
       break;
+    case 'delete':
+      firebase.deletePost(id);
   }
 };
 
@@ -141,24 +144,3 @@ const deletingPost = (click) => {
 };
 */
 // ESTE ES EL CONTROLADOR DE POST:
-const postController = (click, id) => {
-  console.log(click, id);
-  if (click === 'delete') {
-    firebase.deletePost(id);
-  }
-};
-
-const addButtonEventsPost = () => {
-  const parentContainer = document.querySelectorAll('#root');
-  parentContainer.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const id = e.target.dataset.id;
-      const clickEvent = e.target.dataset.action;
-      console.log('HOLO', clickEvent);
-      postController(clickEvent, id);
-    });
-  });
-};
-
-addButtonEventsPost();
